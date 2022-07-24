@@ -14,7 +14,8 @@ function Form({getData}) {
     else {
       getData(weight,height)
       setalert(false);
-    
+     setweight("")
+     setheight("")
     }
 
   };
@@ -25,6 +26,7 @@ function Form({getData}) {
   else {
     alertMessage = ""
   }
+
   return (
 
     <div className="col-sm-4 shadow rounded px-5">
@@ -33,7 +35,7 @@ function Form({getData}) {
         <div className="row">
           <div className="col-sm-6">
             <div className="my-3">
-              <label >Weight</label>
+              <label >Weigh(kg)</label>
               <input type="text"
                 value={weight}
                 onChange={(e) => setweight(e.target.value)} className="form-control"
@@ -43,7 +45,7 @@ function Form({getData}) {
           </div>
           <div className="col-sm-6">
             <div className="my-3">
-              <label >Heigth</label>
+              <label >Heigth(m)</label>
               <input type="text"
                 value={height}
                 onChange={(e) => setheight(e.target.value)} className="form-control"

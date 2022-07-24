@@ -1,5 +1,5 @@
 function BmiList({ range, bmi }) {
-  console.log(range);
+  //console.log(range);
   return (
     <div className="text-center shadow-sm rounded">
       <ul className="list-group ">
