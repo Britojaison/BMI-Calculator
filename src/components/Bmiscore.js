@@ -1,5 +1,5 @@
-function Bmiscore({bmiNo,bmiName}) {
-   //console.log(props);
+function Bmiscore({bmiNo,bmiName,ChangeWeight}) {
+  //console.log(ChangeWeight);
   return (
     <div className="text-center shadow rounded p-4">
       <div>Your BMI Score</div>
@@ -8,6 +8,15 @@ function Bmiscore({bmiNo,bmiName}) {
 
       </div>
       <div className="fs-3 fw-bold text-primary">{bmiName}</div>
+      {ChangeWeight.type==="positive"&&(
+        <div className="fs-4">"you need to lose <span className="fw-bold">{ChangeWeight.wight}kg"</span> </div>
+      )} 
+      {ChangeWeight.type==="negative"&&(
+        <div className="fs-4">you need to gain <span className="fw-bold">{ChangeWeight.wight}kg"</span> </div>
+      )}
+      {ChangeWeight.type==="normal"&&(
+        <div className="fs-4">"yeh you have a healthy weight,<span className="fw-bold">good for you"</span></div>
+      )}
     </div>
   )
 }

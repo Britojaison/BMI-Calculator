@@ -5,6 +5,7 @@ import Bmiscore from './components/Bmiscore';
 import Form from './components/Form'
 
 function App() {
+  const [changeWeight, setChangeWeight] = useState({ wight: "", type: "" })
   const [bmi, setbmi] = useState("00")
   const [bmiType, setbmiType] = useState("not calculated")
   const [bmiRange, setBmiRang] = useState({
@@ -31,9 +32,30 @@ function App() {
       obesityThree: { high: callweigth(40, h) }
     }
     setBmiRang(range);
+    setChangeWeight(weightChange(b, w, range));
   }
   const callweigth = (b, h) => (b * h * h).toFixed(2);
-
+  const weightChange = (b, w, range) => {
+    let changeobj;
+    if (b > 24.9) {
+      changeobj = {
+        wight: (w - range.normal.high).toFixed(2),
+        type: "positive",
+      };
+      return changeobj;
+    }
+    else if (b < 18.5) {
+      changeobj = {
+        wight: (range.normal.low - w).toFixed(2),
+        type: "negative",
+      };
+      return changeobj;
+    }
+    else {
+      changeobj = { wight: 0, type: "normal" };
+      return changeobj;
+    }
+  }
   const calbmi = (w, h) => {
     return (w / (h * h)).toFixed(2);
   };
@@ -62,10 +84,10 @@ function App() {
         </div>
         <div className='row justify-content-center mt-5 mx-2'>
           <div className='col-12 col-sm-6 mb-5'>
-            <Bmiscore bmiNo={bmi} bmiName={bmiType} />
+            <Bmiscore bmiNo={bmi} bmiName={bmiType} ChangeWeight={changeWeight} />
           </div>
           <div className='col-12 col-sm-6'>
-            <BmiList Range={bmiRange} />
+            <BmiList range={bmiRange} bmi={bmi} />
           </div>
         </div>
 
