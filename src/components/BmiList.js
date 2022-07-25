@@ -1,7 +1,7 @@
 function BmiList({ range, bmi }) {
   //console.log(range);
   return (
-    <div className="text-center shadow-sm rounded">
+    <div className="text-center shadow-sm rounded">s
       <ul className="list-group ">
         <li className="list-group-item ">
           <div className="row">
@@ -26,8 +26,8 @@ function BmiList({ range, bmi }) {
         <li
           className={
             18.5 < bmi && bmi < 24.9
-            ?  "border border-danger border-3 list-group-item"
-            : "list-group-item"
+              ? "border border-danger border-3 list-group-item"
+              : "list-group-item"
           }
         >
           <div className="row">
@@ -38,9 +38,9 @@ function BmiList({ range, bmi }) {
         </li>
         <li
           className={
-            24.9 <bmi && bmi < 29.9
-            ?  "border border-danger border-3 list-group-item"
-            : "list-group-item"
+            24.9 < bmi && bmi < 29.9
+              ? "border border-danger border-3 list-group-item"
+              : "list-group-item"
           }
         >
           <div className="row">
@@ -51,10 +51,10 @@ function BmiList({ range, bmi }) {
           </div>
         </li>
         <li
-          className ={
-            29.9 < bmi && bmi <34.9
-            ?  "border border-danger border-3 list-group-item"
-            : "list-group-item"
+          className={
+            29.9 < bmi && bmi < 34.9
+              ? "border border-danger border-3 list-group-item"
+              : "list-group-item"
           }
         >
           <div className="row">
@@ -65,10 +65,10 @@ function BmiList({ range, bmi }) {
           </div>
         </li>
         <li
-          className= {
-            34.9 <bmi && bmi <39.9
-            ?  "border border-danger border-3 list-group-item"
-            : "list-group-item"
+          className={
+            34.9 < bmi && bmi < 39.9
+              ? "border border-danger border-3 list-group-item"
+              : "list-group-item"
           }
         >
           <div className="row">
@@ -79,10 +79,10 @@ function BmiList({ range, bmi }) {
           </div>
         </li>
         <li
-          className= {
-            39.9<bmi
-            ?  "border border-danger border-3 list-group-item"
-            : "list-group-item"
+          className={
+            39.9 < bmi
+              ? "border border-danger border-3 list-group-item"
+              : "list-group-item"
           }
         >
           <div className="row">

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-function Form({getData}) {
+function Form({ getData }) {
   const [weight, setweight] = useState("");
   const [height, setheight] = useState("");
   const [alert, setalert] = useState(false);
@@ -12,10 +12,10 @@ function Form({getData}) {
       console.log("input is not valid");
     }
     else {
-      getData(weight,height)
+      getData(weight, height)
       setalert(false);
-     setweight("")
-     setheight("")
+      setweight("")
+      setheight("")
     }
 
   };
@@ -35,7 +35,7 @@ function Form({getData}) {
         <div className="row">
           <div className="col-sm-6">
             <div className="my-3">
-              <label >Weigh(kg)</label>
+              <label >weight(kg)</label>
               <input type="text"
                 value={weight}
                 onChange={(e) => setweight(e.target.value)} className="form-control"
